@@ -1,0 +1,10 @@
+grant codebase "file:./-" {
+//  permission java.security.AllPermission;
+  permission javax.security.auth.AuthPermission "createLoginContext.simple";
+  permission javax.security.auth.AuthPermission "modifyPrincipals";
+  permission javax.security.auth.AuthPermission "doAsPrivileged";
+};
+
+grant codebase "file:./-", Principal net.nifoo.security.jaas.SimplePrincipal "nifoo" {
+   permission java.io.FilePermission "max.txt", "read";
+};
