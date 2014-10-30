@@ -1,0 +1,1 @@
+keytool -genkey -dname "CN=Nifoo, OU=IT, O=nifoo, L=Zhu Hai, ST=GD, C=CN" -alias nifoo -keystore mykeystore -keypass password -storepass password -validity 3500

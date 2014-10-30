@@ -9,7 +9,7 @@ import javax.security.auth.callback.NameCallback;
 import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 
-public class SimpleCallbackHandle implements CallbackHandler {
+public class SimpleCallbackHandler implements CallbackHandler {
 
 	public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
 

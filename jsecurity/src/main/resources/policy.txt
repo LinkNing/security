@@ -1,6 +1,8 @@
 grant codebase "file:./-" {
 //  permission java.security.AllPermission;
   permission javax.security.auth.AuthPermission "createLoginContext.simple";
+  permission javax.security.auth.AuthPermission "createLoginContext.krb5";
+  permission javax.security.auth.AuthPermission "createLoginContext.ntlm";
   permission javax.security.auth.AuthPermission "modifyPrincipals";
   permission javax.security.auth.AuthPermission "doAsPrivileged";
 };

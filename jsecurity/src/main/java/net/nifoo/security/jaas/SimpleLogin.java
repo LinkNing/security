@@ -13,7 +13,7 @@ public class SimpleLogin {
 		LoginContext loginContext = null;
 		try {
 			//此处指定了使用配置文件的“simple”验证模块，对应的实现类为SimpleLoginModule
-			loginContext = new LoginContext("simple", new SimpleCallbackHandle());
+			loginContext = new LoginContext("simple", new SimpleCallbackHandler());
 		} catch (LoginException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
