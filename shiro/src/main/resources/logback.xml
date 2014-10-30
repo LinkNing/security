@@ -7,9 +7,9 @@
 	</appender>
 
 	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${user.dir}/target/logs/ldap.log</file>
+		<file>${user.dir}/target/logs/security-shiro.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${user.dir}/target/logs/ldap.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>${user.dir}/target/logs/security-shiro.%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -17,7 +17,7 @@
 	</appender>
 
 	<!-- project default level -->
-	<logger name="net.nifoo.ldap" level="DEBUG" />
+	<logger name="net.nifoo.ldap" level="INFO" />
 
 	<!--log4jdbc -->
 	<logger name="jdbc.sqltiming" level="INFO"/>

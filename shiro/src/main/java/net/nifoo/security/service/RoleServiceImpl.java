@@ -5,11 +5,6 @@ import javax.annotation.Resource;
 import net.nifoo.security.dao.RoleDao;
 import net.nifoo.security.entity.Role;
 
-/**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
- */
 public class RoleServiceImpl implements RoleService {
 
 	@Resource
