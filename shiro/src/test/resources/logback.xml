@@ -8,23 +8,22 @@
 		</encoder>
 	</appender>
 
-	<appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<file>${log.home}/security-shiro.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${log.home}/security-shiro.%d{yyyy-MM-dd}.log</fileNamePattern>
-		</rollingPolicy>
+		<append>false</append>
 		<encoder>
 			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
 	<!-- project default level -->
-	<logger name="net.nifoo" level="INFO" />
+	<logger name="net.nifoo" level="DEBUG" />
 
 	<!--log4jdbc -->
 	<logger name="jdbc.sqltiming" level="INFO" />
 
 	<root level="INFO">
-		<appender-ref ref="RollingFile" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
 	</root>
 </configuration>
