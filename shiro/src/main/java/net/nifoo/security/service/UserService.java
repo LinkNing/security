@@ -4,6 +4,9 @@ import java.util.Set;
 
 import net.nifoo.security.entity.User;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
 public interface UserService {
 	public User createUser(User user); //创建账户
 

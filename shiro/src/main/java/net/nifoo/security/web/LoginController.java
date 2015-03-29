@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+//@Controller
 public class LoginController {
 
     @RequestMapping(value = "/login")
@@ -23,7 +23,7 @@ public class LoginController {
             error = "其他错误：" + exceptionClassName;
         }
         model.addAttribute("error", error);
-        return "login";
+        return "forward:login";
     }
 
 

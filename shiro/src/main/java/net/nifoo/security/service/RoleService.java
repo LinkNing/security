@@ -1,7 +1,10 @@
 package net.nifoo.security.service;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import net.nifoo.security.entity.Role;
 
+@Transactional
 public interface RoleService {
 	public Role createRole(Role role);
 
