@@ -5,11 +5,13 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration(locations = { "/spring-beans.xml" })
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "/spring-beans.xml", "/spring-shiro-web.xml" })
+@ActiveProfiles("test")
 public class ServiceTest extends BaseTest {
 
 	@Test
@@ -36,12 +38,12 @@ public class ServiceTest extends BaseTest {
 		Assert.assertEquals(2, permissions.size());
 		Assert.assertFalse(permissions.contains(p3.getPermission()));
 
-		//删除一个permission
+		// 删除一个permission
 		permissionService.deletePermission(p2.getId());
 		permissions = userService.findPermissions(u1.getUsername());
 		Assert.assertEquals(1, permissions.size());
 
-		//解除 zhang-admin关联
+		// 解除 zhang-admin关联
 		userService.uncorrelationRoles(u1.getId(), r1.getId());
 		roles = userService.findRoles(u1.getUsername());
 		Assert.assertEquals(0, roles.size());

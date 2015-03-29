@@ -7,11 +7,13 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "/spring-beans.xml", "/spring-shiro.xml" })
+@ContextConfiguration(locations = { "/spring-beans.xml", "/spring-shiro-web.xml" })
+@ActiveProfiles("test")
 public class UserRealmTest extends BaseTest {
 
 	@Test
@@ -40,12 +42,11 @@ public class UserRealmTest extends BaseTest {
 		for (int i = 1; i <= 5; i++) {
 			try {
 				login(u3.getUsername(), defaultPassword + "1");
-			} catch (Exception e) {/*ignore*/
+			} catch (Exception e) {/* ignore */
 			}
 		}
+		
 		login(u3.getUsername(), defaultPassword + "1");
-
-		//需要清空缓存，否则后续的执行就会遇到问题(或者使用一个全新账户测试)
 	}
 
 	@Test
